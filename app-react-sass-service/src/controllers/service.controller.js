@@ -3,7 +3,7 @@ const serviceCtrl = {};
 
 serviceCtrl.getSpaces = async (req, res) => {
     const spaces = await Space.find(); 
-    res.json({respuesta: spaces});
+    res.json(spaces);
 }
 
 serviceCtrl.getSpace = async (req, res) => {
@@ -18,7 +18,7 @@ serviceCtrl.postSpace = async (req, res) => {
         reference: req.body.reference,
         areamt2: req.body.areamt2,
         pricemt2: req.body.pricemt2,
-        totalprice: req.body.totalprice,
+        totalprice: req.body.totalprice
     });
     await space.save();
     res.json({Space: 'Creado'});
